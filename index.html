@@ -1,39 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VAXINXchat - Flipcard VXchatAPP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VXchatApp – DualSlot Flip Mode</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      background-color: #000;
-      font-family: 'Orbitron', sans-serif;
-      color: #0f0;
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      padding: 2rem;
     }
-
-    .arcane-scroll {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-top: 20px;
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .slot {
+      background: #111;
+      border: 2px solid #444;
+      border-radius: 16px;
+      padding: 1.5rem;
+      flex: 1 1 400px;
+      min-height: 500px;
+    }
+    .slot h2 {
+      margin-top: 0;
       color: #0ff;
-      animation: flicker 2s infinite alternate;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #00ccff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
     }
 
+    /* Flipcard FX from index3 */
     .flip-container {
       perspective: 1000px;
-      margin: 30px 0;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
     }
-
     .flip-card {
       width: 300px;
       height: 450px;
@@ -42,11 +70,9 @@
       transition: transform 1s;
       cursor: pointer;
     }
-
     .flip-container:hover .flip-card {
       transform: rotateY(180deg);
     }
-
     .card-side {
       position: absolute;
       width: 100%;
@@ -54,90 +80,37 @@
       backface-visibility: hidden;
       border-radius: 16px;
     }
-
     .front {
       background: url('vxchatapp_front.png') center/cover no-repeat;
     }
-
     .back {
       background: url('vxchatapp_bck.png') center/cover no-repeat;
       transform: rotateY(180deg);
     }
-
-    .lore {
-      text-align: center;
-      padding: 10px 20px;
-      max-width: 500px;
-      font-size: 0.9rem;
-    }
-
-    .payment-options {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .payment-options img {
-      width: 80px;
-      margin: 0 10px;
-      border-radius: 10px;
-      border: 1px solid #0f0;
-      box-shadow: 0 0 10px #0f0;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      100% { opacity: 0.6; }
-    }
-
-    @media screen and (max-width: 480px) {
-      .flip-card {
-        width: 250px;
-        height: 375px;
-      }
-      .arcane-scroll {
-        font-size: 1rem;
-      }
-    }
   </style>
-  <link rel="manifest" href="manifest.json">
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
-    }
-  </script>
 </head>
 <body>
-  <div class="arcane-scroll">⟦ VAXINXchat Protocol ⟧ — Chat Sovereignly • Offline Always</div>
+  <h1>VXchatApp: DualSlot Flip Mode</h1>
+  <div class="container">
+    <div class="slot">
+      <h2>🧬 VXchat Identity (Flipcard)</h2>
+      <p>This is your front & back VXchat persona. Now includes lore, QR, and flip identity.</p>
+      <div class="flip-container">
+        <div class="flip-card">
+          <div class="card-side front"></div>
+          <div class="card-side back"></div>
+        </div>
+      </div>
+    </div>
 
-  <div class="flip-container">
-    <div class="flip-card">
-      <div class="card-side front"></div>
-      <div class="card-side back"></div>
+    <div class="slot">
+      <h2>💾 VXchatApp Download</h2>
+      <p>Unlocked only by the brave. The VXchat key awaits those who believe.</p>
+      <a class="download-button" href="https://drive.google.com/file/d/12-h0Z_34jubaLMaylXBO2n_p4XynzOsI/view?usp=sharing" target="_blank">Access VXchatApp</a>
     </div>
   </div>
-
-  <div class="lore">
-    <p><b>VAXINXchat APP</b><br/>
-    Offline-first encrypted messenger for rebels, educators, responders, and you.<br/>
-    Bluetooth mesh powered (20m), wallet-unlocked access via GCash or PayPal.<br/>
-    For basements. For schools. For the sovereign mind.</p>
-  </div>
-
-  <div class="payment-options">
-    <p>🔓 Unlock Now:</p>
-    <a href="gcash_qr.png" download><img src="gcash_qr.png" alt="GCash QR"/></a>
-    <a href="https://paypal.me/Regis9999" target="_blank"><img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal"/></a>
-  </div>
-
-  <script>
-    fetch("https://raw.githubusercontent.com/regislara-byte/FlipDeck--VA1-Xalvaros/main/config.json")
-      .then(r => r.json())
-      .then(cfg => {
-        console.log("Auto update config:", cfg);
-        if (cfg.latest_version !== localStorage.getItem("vchat_ver")) {
-          // location.reload(); // Uncomment for production live updates
-        }
-      });
-  </script>
+  <footer>
+    VXchatApp by VAXINX Protocol™ | 2025©
+  </footer>
 </body>
 </html>
