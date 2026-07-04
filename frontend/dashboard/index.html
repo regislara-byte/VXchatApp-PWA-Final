@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAXINX — Engineering Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="repository">
+
+  <!-- Ambient background layers -->
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 4 L42 14 V34 L24 44 L6 34 V14 Z" stroke="var(--teal-core)" stroke-width="1.5"/>
+        <rect x="17" y="20" width="14" height="12" rx="2" stroke="var(--teal-core)" stroke-width="1.6"/>
+        <path d="M20 20v-3a4 4 0 0 1 8 0v3" stroke="var(--teal-core)" stroke-width="1.6" fill="none"/>
+        <circle cx="24" cy="25" r="1.6" fill="var(--teal-core)"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">VAXINX</span>
+        <span class="brand-sub">Engineering Dashboard</span>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="mode-switch" role="group" aria-label="Dashboard mode">
+        <button class="mode-btn is-active" data-mode-btn="repository" aria-pressed="true">Repository Mode</button>
+        <button class="mode-btn" data-mode-btn="builder" aria-pressed="false">Builder Mode</button>
+      </div>
+      <button class="audio-btn" id="audioBtn" type="button" aria-pressed="false" aria-label="Play AERS Mode soundtrack">
+        <span class="audio-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="audio-icon" aria-hidden="true">
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </span>
+        <span class="audio-label">AERS MODE</span>
+      </button>
+      <span class="repo-name">VXchatApp-PWA-Final</span>
+      <span class="branch-pill">main</span>
+      <time class="clock" id="clock" aria-live="off">--:--:--</time>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO: live terminal boot sequence -->
+    <section class="hero" aria-label="Live repository audit">
+      <div class="terminal card-glass" id="terminalCard">
+        <div class="terminal-chrome">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="terminal-title">tools/audit.bat</span>
+        </div>
+        <pre class="terminal-body" id="terminalBody" aria-live="polite"></pre>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Implementation 003 — Engineering Dashboard Foundation</p>
+        <h1>Know your repository's state<br>before you touch a single file.</h1>
+        <p class="hero-lede">This dashboard reads the same signals your audit script does — implementation status, document health, and roadmap position — and puts them in one place instead of a scroll of terminal history.</p>
+      </div>
+    </section>
+
+    <!-- REPO HEALTH -->
+    <section class="panel" aria-labelledby="health-heading">
+      <div class="panel-head">
+        <h2 id="health-heading">Repository Health</h2>
+        <span class="panel-meta" id="lastAudit">Last audit — just now</span>
+      </div>
+      <div class="stat-grid" id="statGrid"></div>
+    </section>
+
+    <!-- IMPLEMENTATION INDEX -->
+    <section class="panel" aria-labelledby="impl-heading">
+      <div class="panel-head">
+        <h2 id="impl-heading">Implementation Index</h2>
+        <span class="panel-meta">001 – 015</span>
+      </div>
+      <ol class="impl-list card-glass" id="implList"></ol>
+    </section>
+
+    <!-- VLA GALLERY -->
+    <section class="panel" aria-labelledby="vla-heading">
+      <div class="panel-head">
+        <h2 id="vla-heading">Visual Lore Artifacts</h2>
+        <span class="panel-meta">Click a card to inspect the engineering record</span>
+      </div>
+      <div class="vla-strip" id="vlaStrip"></div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="panel panel-roadmap" aria-labelledby="roadmap-heading">
+      <div class="panel-head">
+        <h2 id="roadmap-heading">Repository Evolution</h2>
+        <span class="panel-meta">Generation timeline</span>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="timeline-node done">
+          <span class="node-label">Gen 1</span>
+          <span class="node-title">Offline Bluetooth Messaging</span>
+        </div>
+        <div class="timeline-node done">
+          <span class="node-label">Gen 2</span>
+          <span class="node-title">Applied Engineering Repository Standard</span>
+        </div>
+        <div class="timeline-node active">
+          <span class="node-label">Gen 3</span>
+          <span class="node-title">Engineering Workspace</span>
+        </div>
+        <div class="timeline-node">
+          <span class="node-label">Gen 4</span>
+          <span class="node-title">Offline AI Collaboration</span>
+        </div>
+        <div class="timeline-node">
+          <span class="node-label">Future</span>
+          <span class="node-title">Applied Engineering Platform</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>AI + Human Intelligence — Build Once. Publish Everywhere.</span>
+    <span>Regis Lara / VAXINX</span>
+  </footer>
+
+  <!-- Builder Mode ambient audio. Using the local copy next to index.html to avoid relative-path breakage. -->
+  <audio id="builderAudio" src="AERS_MODE.mp3" loop preload="none"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
