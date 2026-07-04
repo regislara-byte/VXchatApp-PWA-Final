@@ -6,6 +6,22 @@ VXchatApp-PWA-Final
 
 ---
 
+## Live Environment
+
+Repository
+
+https://github.com/regislara-byte/VXchatApp-PWA-Final
+
+Production
+
+https://regislara-byte.github.io/VXchatApp-PWA-Final/
+
+Always inspect the live application before proposing UI or UX changes.
+
+Maintain visual consistency unless an implementation specifically requests redesign.
+
+---
+
 ## IMPORTANT
 
 Before writing any code, fully understand the repository.

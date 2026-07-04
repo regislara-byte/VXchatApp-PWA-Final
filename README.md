@@ -18,6 +18,26 @@ It is becoming a reusable engineering environment capable of understanding, docu
 
 ---
 
+## 🌐 Live Demo
+
+Repository
+
+https://github.com/regislara-byte/VXchatApp-PWA-Final
+
+Live Preview
+
+https://regislara-byte.github.io/VXchatApp-PWA-Final/
+
+---
+
+Before making UI changes:
+
+1. Review the live application.
+2. Compare with current implementation.
+3. Improve rather than redesign.
+
+---
+
 # Engineering Philosophy
 
 > AI + Human Intelligence
