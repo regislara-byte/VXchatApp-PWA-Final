@@ -1,0 +1,28 @@
+# .gitattributes
+# Normalize line endings across the repo so Git stops warning
+# about LF -> CRLF conversion on every commit.
+
+# Default: treat all files as text, normalize to LF in the repo,
+# let Git convert to the platform's native line ending on checkout.
+* text=auto
+
+# Force LF for script/config files regardless of platform
+*.md text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# Never touch binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp3 binary
+*.wav binary
+*.ico binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
